@@ -15,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  *         "post"={"security"="is_granted('ROLE_USER')"}
  *     },
  *     itemOperations={
- *         "get"={"security"="is_granted('ROLE_ADMIN')", "security_message"="Only admins can list users."}
+ *         "get"={"security"="is_granted('ROLE_ADMIN')", "security_message"="Only admins can list articles."}
  *     }
  * )
  */
