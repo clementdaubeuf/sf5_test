@@ -10,7 +10,14 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @ORM\Table(name="`user`")
- * @ApiResource()
+ * @ApiResource(
+ *     collectionOperations={
+ *         "get"={"security"="is_granted('ROLE_ADMIN')", "security_message"="Only admins can list users."}
+ *     },
+ *     itemOperations={
+ *         "get"={"security"="is_granted('ROLE_ADMIN')", "security_message"="Only admins can list users."},
+ *     }
+ * )
  */
 class User implements UserInterface
 {

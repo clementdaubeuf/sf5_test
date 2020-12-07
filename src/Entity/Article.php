@@ -9,7 +9,15 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
- * @ApiResource()
+ * @ApiResource(
+ *     attributes={"security"="is_granted('ROLE_USER')"},
+ *     collectionOperations={
+ *         "post"={"security"="is_granted('ROLE_USER')"}
+ *     },
+ *     itemOperations={
+ *         "get"={"security"="is_granted('ROLE_ADMIN')", "security_message"="Only admins can list users."}
+ *     }
+ * )
  */
 class Article
 {
