@@ -2,12 +2,14 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\ArticleRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @ApiResource()
  */
 class Article
 {
